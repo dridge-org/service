@@ -6,18 +6,18 @@ import click
 
 @click.group()
 @click.version_option()
-def cli():
+def cli() -> None:
     pass
 
 
 @cli.command()
-def proxy():
+def proxy() -> None:
     from granian import Granian
     from granian.constants import Interfaces
 
     server = Granian(
         target="dridge.proxy.asgi:app",
-        address="0.0.0.0",
+        address="0.0.0.0", # noqa: S104
         port=25443,
         interface=Interfaces.ASGI,
     )
@@ -26,13 +26,13 @@ def proxy():
 
 
 @cli.command()
-def worker():
+def worker() -> None:
     from granian import Granian
     from granian.constants import Interfaces
 
     server = Granian(
         target="dridge.worker.asgi:app",
-        address="0.0.0.0",
+        address="0.0.0.0", # noqa: S104
         port=25080,
         interface=Interfaces.ASGI,
     )
@@ -40,7 +40,7 @@ def worker():
     server.serve()
 
 
-def main():
+def main() -> None:
     cli()
 
 
