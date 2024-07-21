@@ -6,8 +6,8 @@ authors = ["Dénes Balogh <denes.balogh@icloud.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.12"
-litestar = {extras = ["jwt", "sqlalchemy", "structlog", "reload"], version = "^2.9.1"}
+python = ">=3.10,<3.13"
+litestar = {extras = ["jwt", "sqlalchemy", "structlog"], version = "^2.9.1"}
 litestar-granian = "^0.5.0"
 python-dotenv = "^1.0.1"
 passlib = {extras = ["argon2"], version = "^1.7.4"}
@@ -21,6 +21,7 @@ python-jose = "^3.3.0"
 psutil = "^6.0.0"
 granian = {extras = ["reload"], version = "^1.5.1"}
 click = "^8.1.7"
+pyoxidizer = "^0.24.0"
 
 [tool.poetry.scripts]
 dridge = "dridge.cli:main"
